@@ -5,21 +5,23 @@ import ActivityCreate from './components/ActivityCreate/ActivityCreate.jsx';
 import ActivitiesList from './components/ActivitiesList/ActivitiesList.jsx';
 import Detail from './components/Detail/Detail.jsx';
 import NotFound from './components/NotFound/NotFound.jsx';
-import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import axios from 'axios';
+import './App.css';
+axios.defaults.baseURL = 'http://localhost:3001/';
 
 function App() {
   return (
     <BrowserRouter>
       <div className='App'>
         <Switch>
-          <Route exact path = '/' component = {LandingPage}/>
-          <Route exact path = '/Home' component = {Home}/>
-          <Route exact path = '/Activity' component = {ActivityCreate}/>
-          <Route exact path = '/Activities' component = {ActivitiesList}/>
-          <Route exact path = '/Home/:id' component = {Detail}/>
-          <Route exact path = '/Home/:*' component = {Detail}/>
-          <Route exact path = '*' component = {NotFound}/>
+          <Route exact path='/' component={LandingPage} />
+          <Route exact path='/Home' component={Home} />
+          <Route exact path='/Activity' component={ActivityCreate} />
+          <Route exact path='/Activities' component={ActivitiesList} />
+          <Route exact path='/Home/:id' component={Detail} />
+          <Route exact path='/Home/:*' component={Detail} />
+          <Route exact path='*' component={NotFound} />
         </Switch>
       </div>
     </BrowserRouter>
