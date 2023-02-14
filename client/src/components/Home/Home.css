@@ -1,0 +1,6 @@
+.home-container {
+  background-image: url(../img/landingpage.jpg);
+  background-position: center 0;
+  background-size: cover;
+  background-attachment: fixed;
+}
